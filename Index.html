@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corte Tapia — Diego Tapia, editor de video</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'media',
+    theme: {
+      extend: {
+        colors: {
+          bg:      { DEFAULT: '#EDF1F2', dark: '#14151A' },
+          surface: { DEFAULT: '#FFFFFF', dark: '#1D1F26' },
+          ink:     { DEFAULT: '#171A1D', dark: '#ECE7DA' },
+          soft:    { DEFAULT: '#4B5257', dark: '#A9A79C' },
+          line:    { DEFAULT: '#C7D0D3', dark: '#33353D' },
+          accent:  { DEFAULT: '#C97A1E', dark: '#E7A33E' },
+          accent2: { DEFAULT: '#2C7A70', dark: '#4FA69C' },
+        },
+        fontFamily: {
+          display: ['"Big Shoulders Display"', 'sans-serif'],
+          body: ['"Work Sans"', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'monospace'],
+        },	
+      },
+    },
+  };
+</script>
+</head>
+
+<body class="bg-bg dark:bg-bg-dark text-ink dark:text-ink-dark font-body antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-20 border-b border-line dark:border-line-dark backdrop-blur bg-bg/90 dark:bg-bg-dark/90">
+  <div class="max-w-5xl mx-auto px-7 py-4 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="Corte Tapia, inicio">
+      <img src="img/CorteTapia-verticallogoblanco.png" alt="Corte Tapia" class="w-20">
+    </a>
+    <a href="https://wa.me/584125302089?text=Hola%20Diego%2C%20vi%20tu%20portafolio%20y%20quiero%20hablar%20de%20un%20proyecto"
+       target="_blank" rel="noopener"
+       class="inline-flex items-center gap-2 font-mono text-xs text-soft dark:text-soft-dark border border-line dark:border-line-dark px-3.5 py-2 hover:border-accent dark:hover:border-accent-dark hover:text-ink dark:hover:text-ink-dark transition-colors">
+      <span class="w-1.5 h-1.5 rounded-full bg-accent dark:bg-accent-dark flex-shrink-0"></span>
+      <span class="hidden sm:inline">Escribir por WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-7" id="top">
+
+  <!-- HERO -->
+ <section class="py-16 md:py-24 border-b border-line dark:border-line-dark">
+    <div class="grid grid-cols-1 md:grid-cols-[1.15fr_1fr] gap-11 items-center">
+      <div>
+        <h1 class="font-display font-extrabold uppercase leading-[0.86] tracking-tight text-[58px] sm:text-[80px] md:text-[90px] lg:text-[104px] mb-7">
+          CORTE<br>
+          <span class="text-accent dark:text-accent-dark">TAPIA</span>
+        </h1>
+        <p class="max-w-md text-lg text-soft dark:text-soft-dark mb-8">
+          Edición de video para redes, YouTube y marca. Dos años cortando historias que se quedan viendo hasta el final.
+        </p>
+        <div class="flex flex-wrap gap-3.5">
+          <a href="#portafolio"
+             class="inline-flex items-center gap-2 px-5.5 py-3.5 font-semibold text-[15px] border border-accent dark:border-accent-dark bg-accent dark:bg-accent-dark text-bg-dark hover:-translate-y-0.5 transition-transform">
+            Ver portafolio
+          </a>
+          <a href="https://wa.me/584125302089?text=Hola%20Diego%2C%20vi%20tu%20portafolio%20y%20quiero%20hablar%20de%20un%20proyecto"
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5.5 py-3.5 font-semibold text-[15px] border border-line dark:border-line-dark hover:border-accent dark:hover:border-accent-dark transition-colors">
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+     
+     <div class="relative w-full aspect-[9/16] max-h-[560px] bg-surface dark:bg-surface-dark border border-line dark:border-line-dark overflow-hidden shadow-[0_0_60px_-5px_#E7A33E]">
+  <span class="absolute top-3 left-3 z-20 font-mono text-[11px] tracking-wide text-bg dark:text-bg-dark bg-accent dark:bg-accent-dark px-2.5 py-1">
+    EDIT REEL
+  </span>
+
+  <iframe
+    id="reelFrame"
+    src="https://player.vimeo.com/video/1230582175?h=f7fc0cee9b&autoplay=1&muted=1&loop=1&controls=0&title=0&byline=0&portrait=0&dnt=1"
+    class="absolute inset-0 w-full h-full border-0 scale-[1.15]"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    title="Reel de Diego Tapia">
+  </iframe>
+
+  <button
+    id="audioToggle"
+    type="button"
+    aria-label="Activar sonido"
+    class="absolute bottom-3 right-3 z-20 flex items-center justify-center w-10 h-10 bg-black/70 hover:bg-black text-white rounded-full backdrop-blur transition">
+    <!-- Icono silenciado -->
+    <svg id="iconMuted" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
+    </svg>
+    <!-- Icono con sonido -->
+    <svg id="iconSound" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+  </button>
+</div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  (function () {
+    const iframe   = document.getElementById('reelFrame');
+    const button   = document.getElementById('audioToggle');
+    const iconMute = document.getElementById('iconMuted');
+    const iconSnd  = document.getElementById('iconSound');
+
+    const player = new Vimeo.Player(iframe);
+    let muted = true;
+
+    button.addEventListener('click', async () => {
+      muted = !muted;
+
+      // 👇 Solo cambia el audio, NO toca la reproducción ni el tiempo
+      await player.setMuted(muted);
+      await player.setVolume(muted ? 0 : 1);
+
+      button.setAttribute('aria-label', muted ? 'Activar sonido' : 'Silenciar');
+      iconMute.classList.toggle('hidden', !muted);
+      iconSnd.classList.toggle('hidden', muted);
+    });
+  })();
+</script>
+
+  </section>
+ 
+  <!-- PORTAFOLIO -->
+  <section class="py-16 border-b border-line dark:border-line-dark" id="portafolio">
+    <div class="flex items-baseline justify-between gap-5 flex-wrap mb-9">
+      <h2 class="font-display font-bold uppercase text-3xl md:text-4xl">Portafolio</h2>
+      <p class="font-mono text-xs text-soft dark:text-soft-dark">3 líneas de trabajo — material completo en la carpeta</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-line dark:bg-line-dark border border-line dark:border-line-dark">
+
+      <a href="https://drive.google.com/drive/folders/1RVBo9K1TN0Vb_DY2AbGa5uwm6accXU2p?usp=drive_link" target="_blank" rel="noopener"
+         class="bg-surface dark:bg-surface-dark p-6 flex flex-col gap-3.5 hover:bg-accent/10 dark:hover:bg-accent-dark/10 transition-colors">
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+        </div>
+        <p class="font-mono text-xs text-accent2 dark:text-accent2-dark">CLIP / REDES</p>
+        <p class="font-display font-bold uppercase text-2xl leading-none">Reels &amp; Shorts</p>
+        <p class="text-sm text-soft dark:text-soft-dark">Cortes rápidos y verticales pensados para retener en los primeros 3 segundos.</p>
+        <span class="mt-auto text-sm font-semibold text-accent dark:text-accent-dark">Ver clips en Drive</span>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1gqYDHByo-dlJphQTnzZ3Qsv_q05yiKkr?usp=drive_link" target="_blank" rel="noopener"
+         class="bg-surface dark:bg-surface-dark p-6 flex flex-col gap-3.5 hover:bg-accent/10 dark:hover:bg-accent-dark/10 transition-colors">
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+        </div>
+        <p class="font-mono text-xs text-accent2 dark:text-accent2-dark">CLIP / YOUTUBE</p>
+        <p class="font-display font-bold uppercase text-2xl leading-none">Formato largo</p>
+        <p class="text-sm text-soft dark:text-soft-dark">Ritmo, narrativa y estructura para contenido de YouTube de mayor duración.</p>
+        <span class="mt-auto text-sm font-semibold text-accent dark:text-accent-dark">Ver clips en Drive</span>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1xSo5DEfUdhjq1O2wh7ePU2EubZZnjY3U?usp=drive_link" target="_blank" rel="noopener"
+         class="bg-surface dark:bg-surface-dark p-6 flex flex-col gap-3.5 hover:bg-accent/10 dark:hover:bg-accent-dark/10 transition-colors">
+        <div class="flex gap-1.5">
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+          <span class="w-2 h-2 border border-soft dark:border-soft-dark"></span>
+        </div>
+        <p class="font-mono text-xs text-accent2 dark:text-accent2-dark">CLIP / Videoclips</p>
+        <p class="font-display font-bold uppercase text-2xl leading-none">Videoclips</p>
+        <p class="text-sm text-soft dark:text-soft-dark">Videoclip musicales con un acabado limpio y profesional.</p>
+        <span class="mt-auto text-sm font-semibold text-accent dark:text-accent-dark">Ver clips en Drive</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section class="py-16 border-b border-line dark:border-line-dark" id="sobre-mi">
+    <h2 class="font-display font-bold uppercase text-3xl md:text-4xl mb-9">Sobre mí</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div class="space-y-4 text-[16.5px] text-soft dark:text-soft-dark">
+        <p><strong class="text-ink dark:text-ink-dark font-semibold">Soy Diego Tapia</strong>, editor de video venezolano con dos años trabajando en proyectos para clientes y marcas propias.</p>
+        <p>Trabajo el ritmo, el sonido y la narrativa de cada video para que se vea profesional sin perder la esencia de quien lo pidió — desde un reel de 15 segundos hasta un video institucional completo.</p>
+        <p>Si tienes contenido grabado y necesitas que alguien le dé forma, cuenta conmigo.</p>
+      </div>
+
+      <div class="border border-line dark:border-line-dark bg-surface dark:bg-surface-dark overflow-hidden">
+        <div class="h-5 border-b border-line dark:border-line-dark"
+             style="background: repeating-linear-gradient(-35deg, currentColor 0px, currentColor 18px, transparent 18px, transparent 36px); color:#171A1D;"></div>
+        <div class="p-6">
+          <div class="flex justify-between font-mono text-[11px] text-soft dark:text-soft-dark mb-4 tracking-wide">
+            <span>ESC. 01</span>
+            <span>TOMA 01</span>
+            <span>CORTE TAPIA</span>
+          </div>
+          <p class="font-display font-semibold text-xl leading-snug">
+            "No hay nada tan grande ni tan pequeño, que con dedicación y ganas, no se pueda lograr."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="py-16" id="contacto">
+    <div class="flex flex-wrap justify-between items-end gap-7">
+      <div>
+        <h2 class="font-display font-extrabold uppercase leading-[0.95] text-4xl sm:text-5xl md:text-6xl max-w-xs mb-3.5">
+          Hablemos de tu proyecto
+        </h2>
+        <p class="text-soft dark:text-soft-dark max-w-md">Cuéntame qué necesitas editar y en cuánto tiempo. Respondo por WhatsApp.</p>
+      </div>
+      <a href="https://wa.me/584125302089?text=Hola%20Diego%2C%20vi%20tu%20portafolio%20y%20quiero%20hablar%20de%20un%20proyecto"
+         target="_blank" rel="noopener"
+         class="inline-flex items-center gap-2 px-6 py-3.5 font-semibold text-[15px] border border-accent dark:border-accent-dark bg-accent dark:bg-accent-dark text-bg-dark hover:-translate-y-0.5 transition-transform">
+        Escribir a Diego
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="max-w-5xl mx-auto px-7 py-10 font-mono text-xs text-soft dark:text-soft-dark flex justify-between flex-wrap gap-2.5">
+  <span>Corte Tapia — Diego Tapia</span>
+  <span>Venezuela</span>
+</footer>
+
+</body>
+</html>
